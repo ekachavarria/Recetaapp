@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block titulo %}Recetaapp &mdash; Mis recetas{% endblock %}
+{% block contenido %}
+  <div class="hero">
+    <img src="{{ url_for('static', filename='img/fotos/hero.jpg') }}" alt="Comida deliciosa y saludable">
+    <div>
+      <h2>Come rico y saludable</h2>
+      <p>Crea, busca y organiza tus recetas favoritas por categoría, ingredientes o tiempo de preparación.</p>
+    </div>
+  </div>
+
+  <form class="toolbar" method="get" action="{{ url_for('recetario.listar') }}">
+    <div>
+      <label for="q">Buscar (nombre o ingrediente)</label>
+      <input type="text" id="q" name="q" value="{{ criterios.q or '' }}" placeholder="ej. tomate">
+    </div>
+    <div>
+      <label for="categoria">Categoría</label>
+      <select id="categoria" name="categoria">
+        <option value="">Todas</option>
+        {% for c in categorias %}
+          <option value="{{ c }}" {% if criterios.categoria == c %}selected{% endif %}>{{ c }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label for="tiempo_max">Tiempo máx. (min)</label>
+      <input type="number" id="tiempo_max" name="tiempo_max" min="1" value="{{ criterios.tiempo_max or '' }}">
+    </div>
+    <div>
+      <button class="btn" type="submit">Aplicar</button>
+      <a class="btn secundario" href="{{ url_for('recetario.listar') }}">Limpiar</a>
+    </div>
+  </form>
+
+  {% if recetas %}
+    <div class="grid-recetas">
+      {% for receta in recetas %}
+        <div class="card-receta">
+          <img src="{{ url_imagen_receta(receta) }}" alt="{{ receta.nombre }}">
+          <div class="contenido">
+            <span class="badge">{{ receta.categoria }}</span>
+            <h3>{{ receta.nombre }}</h3>
+            <p class="meta">⏱ {{ receta.tiempo_preparacion_min }} min &nbsp;·&nbsp; 🍽 {{ receta.porciones }} porciones</p>
+            <div class="acciones">
+              <a class="btn" href="{{ url_for('recetario.detalle', id_receta=receta.id) }}">Ver</a>
+              <a class="btn secundario" href="{{ url_for('recetario.editar', id_receta=receta.id) }}">Editar</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="vacio">
+      <img src="{{ url_for('static', filename='img/vacio.svg') }}" alt="Sin resultados">
+      <p>No se encontraron recetas con esos criterios.</p>
+      <a class="btn" href="{{ url_for('recetario.nueva') }}">Crear la primera receta</a>
+    </div>
+  {% endif %}
+{% endblock %}

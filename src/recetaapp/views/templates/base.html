@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titulo %}Recetaapp{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='img/logo.svg') }}">
+</head>
+<body>
+  <header class="app-header">
+    <img class="logo" src="{{ url_for('static', filename='img/logo.svg') }}" alt="Recetaapp">
+    <div>
+      <h1>Recetaapp</h1>
+      <p>Tus recetas de cocina saludable, organizadas.</p>
+    </div>
+  </header>
+  <nav class="app-nav">
+    <a href="{{ url_for('recetario.listar') }}">Inicio</a>
+    <a href="{{ url_for('recetario.nueva') }}">Nueva receta</a>
+  </nav>
+  <main>
+    {% with mensajes = get_flashed_messages(with_categories=true) %}
+      {% for categoria, mensaje in mensajes %}
+        <div class="flash {{ categoria }}">{{ mensaje }}</div>
+      {% endfor %}
+    {% endwith %}
+    {% block contenido %}{% endblock %}
+  </main>
+  <footer>Recetaapp &mdash; hecho con Flask (MVC) y uv</footer>
+</body>
+</html>

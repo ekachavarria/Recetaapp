@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block titulo %}{{ titulo }} &mdash; Recetaapp{% endblock %}
+{% block contenido %}
+  <div class="form-receta">
+    <h2>{{ titulo }}</h2>
+    <form method="post">
+      <div class="campo">
+        <label for="nombre">Nombre de la receta</label>
+        <input type="text" id="nombre" name="nombre" required value="{{ valores.nombre or '' }}">
+      </div>
+
+      <div class="campo">
+        <label for="categoria">Categoría</label>
+        <select id="categoria" name="categoria">
+          {% for c in categorias %}
+            <option value="{{ c }}" {% if valores.categoria == c %}selected{% endif %}>{{ c }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="fila">
+        <div class="campo">
+          <label for="tiempo_preparacion_min">Tiempo de preparación (min)</label>
+          <input type="number" id="tiempo_preparacion_min" name="tiempo_preparacion_min" min="1" required value="{{ valores.tiempo_preparacion_min or '' }}">
+        </div>
+        <div class="campo">
+          <label for="porciones">Porciones</label>
+          <input type="number" id="porciones" name="porciones" min="1" required value="{{ valores.porciones or '' }}">
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="ingredientes">Ingredientes (uno por línea: <em>cantidad, unidad, nombre</em>)</label>
+        <textarea id="ingredientes" name="ingredientes" rows="5" placeholder="2, tazas, espinaca&#10;1, unidad, aguacate&#10;100, g, queso feta" required>{{ valores.ingredientes_texto or '' }}</textarea>
+        <small>Ejemplo: <code>2, tazas, espinaca</code></small>
+      </div>
+
+      <div class="campo">
+        <label for="imagen">Foto de la receta (URL, opcional)</label>
+        <input type="text" id="imagen" name="imagen" value="{{ valores.imagen or '' }}" placeholder="https://... (si se deja vacío, se usa una foto según la categoría)">
+      </div>
+
+      <div class="campo">
+        <label for="pasos">Pasos de preparación (uno por línea)</label>
+        <textarea id="pasos" name="pasos" rows="5" placeholder="Lavar las verduras&#10;Cortar el aguacate en cubos&#10;Mezclar todo en un bowl" required>{{ valores.pasos_texto or '' }}</textarea>
+      </div>
+
+      <div class="acciones">
+        <button class="btn" type="submit">Guardar receta</button>
+        <a class="btn secundario" href="{{ url_for('recetario.listar') }}">Cancelar</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}

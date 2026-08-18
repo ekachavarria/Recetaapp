@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block titulo %}{{ receta.nombre }} &mdash; Recetaapp{% endblock %}
+{% block contenido %}
+  <div class="detalle-receta">
+    <img class="foto-grande" src="{{ url_imagen_receta(receta) }}" alt="{{ receta.nombre }}">
+    <span class="badge">{{ receta.categoria }}</span>
+    <h2>{{ receta.nombre }}</h2>
+    <p class="meta">⏱ {{ receta.tiempo_preparacion_min }} min de preparación &nbsp;·&nbsp; 🍽 {{ receta.porciones }} porciones</p>
+
+    <h3>Ingredientes</h3>
+    <ul>
+      {% for ing in receta.ingredientes %}
+        <li>{{ ing.cantidad }} {{ ing.unidad }} de {{ ing.nombre }}</li>
+      {% endfor %}
+    </ul>
+
+    <h3>Preparación</h3>
+    <ol>
+      {% for paso in receta.pasos %}
+        <li>{{ paso }}</li>
+      {% endfor %}
+    </ol>
+
+    <div class="acciones">
+      <a class="btn secundario" href="{{ url_for('recetario.editar', id_receta=receta.id) }}">Editar</a>
+      <form method="post" action="{{ url_for('recetario.eliminar', id_receta=receta.id) }}" onsubmit="return confirm('¿Eliminar esta receta? Esta acción no se puede deshacer.');" style="display:inline;">
+        <button class="btn peligro" type="submit">Eliminar</button>
+      </form>
+      <a class="btn secundario" href="{{ url_for('recetario.listar') }}">Volver al listado</a>
+    </div>
+  </div>
+{% endblock %}

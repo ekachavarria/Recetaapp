@@ -1,0 +1,223 @@
+[
+  {
+    "id": "f62e728e-9197-4cc8-8017-b01ca6306c17",
+    "nombre": "Ensalada de espinaca y aguacate",
+    "categoria": "Almuerzo",
+    "ingredientes": [
+      {
+        "nombre": "espinaca",
+        "cantidad": 2.0,
+        "unidad": "tazas"
+      },
+      {
+        "nombre": "aguacate",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "queso feta",
+        "cantidad": 50.0,
+        "unidad": "g"
+      }
+    ],
+    "pasos": [
+      "Lavar la espinaca",
+      "Cortar el aguacate en cubos",
+      "Mezclar todo con el queso feta"
+    ],
+    "tiempo_preparacion_min": 10,
+    "porciones": 2,
+    "imagen": null,
+    "fecha_creacion": "2026-08-18T01:33:38.577912+00:00",
+    "fecha_actualizacion": "2026-08-18T01:33:38.577929+00:00"
+  },
+  {
+    "id": "0e62b2f8-c234-458f-b0bf-9f1c6daa0c72",
+    "nombre": "Avena con frutos rojos",
+    "categoria": "Desayuno",
+    "ingredientes": [
+      {
+        "nombre": "avena",
+        "cantidad": 0.5,
+        "unidad": "taza"
+      },
+      {
+        "nombre": "leche de almendra",
+        "cantidad": 1.0,
+        "unidad": "taza"
+      },
+      {
+        "nombre": "frutos rojos",
+        "cantidad": 0.5,
+        "unidad": "taza"
+      }
+    ],
+    "pasos": [
+      "Calentar la leche de almendra",
+      "Agregar la avena y cocinar 5 minutos",
+      "Servir con los frutos rojos encima"
+    ],
+    "tiempo_preparacion_min": 8,
+    "porciones": 1,
+    "imagen": null,
+    "fecha_creacion": "2026-08-18T01:33:38.591033+00:00",
+    "fecha_actualizacion": "2026-08-18T01:33:38.591046+00:00"
+  },
+  {
+    "id": "302f6393-f5e7-40ad-9cea-a29f242c8088",
+    "nombre": "Salmon al horno con vegetales",
+    "categoria": "Cena",
+    "ingredientes": [
+      {
+        "nombre": "salmon",
+        "cantidad": 2.0,
+        "unidad": "filetes"
+      },
+      {
+        "nombre": "brocoli",
+        "cantidad": 1.0,
+        "unidad": "taza"
+      },
+      {
+        "nombre": "aceite de oliva",
+        "cantidad": 1.0,
+        "unidad": "cucharada"
+      }
+    ],
+    "pasos": [
+      "Precalentar el horno a 200 grados",
+      "Colocar el salmon y el brocoli en una bandeja con aceite",
+      "Hornear 20 minutos"
+    ],
+    "tiempo_preparacion_min": 25,
+    "porciones": 2,
+    "imagen": null,
+    "fecha_creacion": "2026-08-18T01:33:38.601769+00:00",
+    "fecha_actualizacion": "2026-08-18T01:33:38.601779+00:00"
+  },
+  {
+    "id": "cf39de98-1d65-42dd-94b3-b2178af737e9",
+    "nombre": "Gallo pinto con huevo revuelto y tortilla palmeada",
+    "categoria": "Desayuno",
+    "ingredientes": [
+      {
+        "nombre": "arroz cocido",
+        "cantidad": 2.0,
+        "unidad": "tazas"
+      },
+      {
+        "nombre": "frijoles negros cocidos",
+        "cantidad": 1.0,
+        "unidad": "taza"
+      },
+      {
+        "nombre": "cebolla picada",
+        "cantidad": 0.25,
+        "unidad": "taza"
+      },
+      {
+        "nombre": "chile dulce picado",
+        "cantidad": 0.25,
+        "unidad": "taza"
+      },
+      {
+        "nombre": "culantro picado",
+        "cantidad": 2.0,
+        "unidad": "cucharadas"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "tortilla de maiz",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 1.0,
+        "unidad": "cucharada"
+      }
+    ],
+    "pasos": [
+      "Sofreir la cebolla y el chile dulce en el aceite",
+      "Agregar el arroz y los frijoles con un poco del caldo de frijoles y mezclar bien",
+      "Sazonar con culantro picado y cocinar 5 minutos revolviendo",
+      "Aparte, batir los huevos y revolverlos en un sarten hasta cuajar",
+      "Calentar las tortillas en un comal hasta que esten palmeadas y ligeramente doradas",
+      "Servir el gallo pinto acompanado del huevo revuelto y las tortillas"
+    ],
+    "tiempo_preparacion_min": 20,
+    "porciones": 2,
+    "imagen": "fotos/gallo_pinto.jpg",
+    "fecha_creacion": "2026-08-18T01:50:48.153972+00:00",
+    "fecha_actualizacion": "2026-08-18T01:50:48.153985+00:00"
+  },
+  {
+    "id": "a5b161de-4a9d-4a4c-a1b2-10d17a2bf6f9",
+    "nombre": "Fajitas de res con vegetales salteados",
+    "categoria": "Cena",
+    "ingredientes": [
+      {
+        "nombre": "tira de res en tiras",
+        "cantidad": 400.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "pimiento rojo en tiras",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "pimiento amarillo en tiras",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "cebolla en tiras",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "aceite de oliva",
+        "cantidad": 2.0,
+        "unidad": "cucharadas"
+      },
+      {
+        "nombre": "comino",
+        "cantidad": 1.0,
+        "unidad": "cucharadita"
+      },
+      {
+        "nombre": "pimenton",
+        "cantidad": 1.0,
+        "unidad": "cucharadita"
+      },
+      {
+        "nombre": "ajo picado",
+        "cantidad": 1.0,
+        "unidad": "diente"
+      },
+      {
+        "nombre": "limon (el jugo)",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      }
+    ],
+    "pasos": [
+      "Marinar la carne con ajo, comino, pimenton, sal y jugo de limon por 15 minutos",
+      "Calentar el aceite en un sarten o wok a fuego alto",
+      "Saltear la carne 3 a 4 minutos hasta dorar y retirar",
+      "En el mismo sarten saltear los pimientos y la cebolla 4 minutos hasta que esten al punto",
+      "Regresar la carne al sarten y mezclar todo 2 minutos mas",
+      "Servir caliente, opcionalmente con tortillas de maiz"
+    ],
+    "tiempo_preparacion_min": 25,
+    "porciones": 3,
+    "imagen": "fotos/fajitas.jpg",
+    "fecha_creacion": "2026-08-18T01:50:48.166850+00:00",
+    "fecha_actualizacion": "2026-08-18T01:50:48.166860+00:00"
+  }
+]
